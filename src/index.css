@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: #C3002F;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.search-bar {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.search-bar::placeholder {
+  color: #999;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sort Controls */
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sort-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sort-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.sort-btn.active {
+  background-color: #C3002F;
+  color: white;
+}
+
+.sort-btn:not(.active) {
+  background-color: #e0e0e0;
+  color: #666;
+}
+
+.sort-btn:hover:not(.active) {
+  background-color: #d0d0d0;
+}
+
+/* Post Cards */
+.post-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  line-height: 1.3;
+}
+
+.post-preview-image {
+  margin: 1rem 0;
+}
+
+.post-preview-image img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.post-preview-content {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}
+
+.post-votes {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Form Styles */
+.form-container {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #C3002F;
+}
+
+.form-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.file-upload-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.file-preview {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #C3002F;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #a0001f;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Post Detail Page */
+.post-detail {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.upvote-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #666;
+  margin: 1rem 0;
+  transition: all 0.2s;
+}
+
+.upvote-btn:hover {
+  color: #C3002F;
+  border-color: #C3002F;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Comments */
+.comments-section {
+  margin-top: 2rem;
+}
+
+.comments-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.comment {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border-left: 3px solid #C3002F;
+}
+
+.comment-meta {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.comment-content {
+  color: #333;
+}
+
+.comment-form {
+  margin-top: 1rem;
+}
+
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .search-bar {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .nav-links {
+    justify-content: center;
+  }
+  
+  .container {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .sort-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
